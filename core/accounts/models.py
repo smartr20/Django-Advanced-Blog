@@ -10,8 +10,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
     
+
     # USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
-
+    objects = UserManager()
     def __str__(self):
         return self.email
